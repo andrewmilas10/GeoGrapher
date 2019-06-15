@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="831.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="geo.FXMLDocumentController">
+    <children>
+      <AnchorPane layoutY="1.0" minHeight="-Infinity" prefHeight="831.0" prefWidth="1028.0">
+         <children>
+            <Label layoutX="14.0" prefHeight="51.0" prefWidth="274.0" text="GeoGrapher">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </Label>
+            <Line endX="1028.0" endY="138.0" layoutY="-12.0" startY="138.0" strokeWidth="2.0" />
+            <Line endX="200.0" endY="126.0" startX="200.0" startY="831.0" strokeWidth="2.0" />
+            <Label fx:id="infoLbl" layoutX="496.0" layoutY="10.0" prefHeight="127.0" prefWidth="438.0" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Line endX="1028.0" startX="1028.0" startY="831.0" strokeWidth="2.0" />
+            <Line endX="1028.0" endY="831.0" startY="831.0" strokeWidth="2.0" />
+            <AnchorPane fx:id="canvas" layoutX="201.0" layoutY="127.0" onMouseMoved="#onMouseMove" onScroll="#scroll" prefHeight="703.0" prefWidth="826.0" style="-fx-background-color: #FFFFFF;" translateZ="5.0" />
+            <ScrollPane layoutY="127.0" prefHeight="703.0" prefWidth="199.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="703.0" prefWidth="199.0">
+                     <children>
+                          <Button fx:id="addPointBtn" layoutX="10.0" layoutY="110.0" onAction="#handleAddPoint" prefHeight="38.0" prefWidth="102.0" text="Add Point">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="addSegmentBtn" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#handleAddSegment" prefHeight="38.0" prefWidth="162.0" text="Add Line Segment">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="addCircleBtn" layoutX="10.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleAddCircle" prefHeight="38.0" prefWidth="110.0" text="Add Circle">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="moveBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleMove" prefHeight="10.0" prefWidth="72.0" text="Move">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="addLineBtn" layoutX="10.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleAddLine" prefHeight="26.0" prefWidth="110.0" text="Add Line">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="addMidpointBtn" layoutX="10.0" layoutY="310.0" mnemonicParsing="false" onAction="#handleAddMidpoint" prefHeight="38.0" prefWidth="162.0" text="Add Midpoint">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="addBisectorBtn" layoutX="10.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleAddBisector" prefHeight="38.0" prefWidth="169.0" text="Add Angle Bisector">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="addParallelBtn" layoutX="10.0" layoutY="410.0" mnemonicParsing="false" onAction="#handleAddParallel" prefHeight="38.0" prefWidth="154.0" text="Add Parallel Line">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="addPerpendicularBtn" layoutX="10.0" layoutY="460.0" mnemonicParsing="false" onAction="#handleAddPerpendicular" prefHeight="38.0" prefWidth="169.0" text="Add Perpendicular Line">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="deleteBtn" layoutX="10.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleDelete" text="Delete">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <ColorPicker fx:id="colorPicker" layoutX="10.0" layoutY="550.0" onAction="#handlePickColor" promptText="Black" />
+                        <Button fx:id="colorBtn" layoutX="10.0" layoutY="510.0" mnemonicParsing="false" onAction="#handleChangeColor" text="Change Color">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="distanceBtn" layoutX="10.0" layoutY="590.0" mnemonicParsing="false" onAction="#handleFindDistance" text="Find Distance">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="angleBtn" layoutX="10.0" layoutY="640.0" mnemonicParsing="false" onAction="#handleFindAngle" text="Find Angle">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <Button layoutX="14.0" layoutY="74.0" mnemonicParsing="false" onAction="#readFile" prefHeight="31.0" prefWidth="112.0" text="Open File">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="151.0" layoutY="74.0" mnemonicParsing="false" onAction="#updateFile" text="Save">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>
